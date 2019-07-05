@@ -1,0 +1,9 @@
+.vs/
+DrugManagement/DrugManagement.Android/bin/
+DrugManagement/DrugManagement.Android/obj/DrugManagement.Android.csproj.nuget.cache
+DrugManagement/DrugManagement.Android/obj/DrugManagement.Android.csproj.nuget.dgspec.json
+DrugManagement/DrugManagement.Android/obj/
+DrugManagement/DrugManagement.iOS/bin/
+DrugManagement/DrugManagement.iOS/obj/
+DrugManagement/DrugManagement/bin/
+DrugManagement/DrugManagement/obj/
