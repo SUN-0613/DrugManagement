@@ -14,4 +14,15 @@
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.425677" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\XamarinCommon\CommonForms\CommonForms\CommonForms.csproj" />
+    <ProjectReference Include="..\..\..\XamarinCommon\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\View\" />
+    <Folder Include="Pages\ViewModel\" />
+    <Folder Include="Pages\Model\" />
+  </ItemGroup>
 </Project>
