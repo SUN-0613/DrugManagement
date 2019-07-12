@@ -25,4 +25,19 @@
     <Folder Include="Pages\ViewModel\" />
     <Folder Include="Pages\Model\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resx\Parameter.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Parameter.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resx\Parameter.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameter.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 </Project>

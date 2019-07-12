@@ -8,7 +8,7 @@ namespace DrugManagement.Data.Info
     /// <summary>
     /// 次回アラームにおける薬情報
     /// </summary>
-    public class AlarmDrug
+    public class AlarmDrug : ICloneable
     {
 
         /// <summary>
@@ -31,6 +31,20 @@ namespace DrugManagement.Data.Info
         /// </summary>
         public bool IsHourEach = false;
 
+        /// <summary>
+        /// クローン作成
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new AlarmDrug()
+            {
+                Index = Index,
+                Volume = Volume,
+                IsAppoint = IsAppoint,
+                IsHourEach = IsHourEach
+            };
+        }
     }
 
 }

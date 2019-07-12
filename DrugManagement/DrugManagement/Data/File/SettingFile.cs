@@ -3,6 +3,7 @@ using AYam.Common.Data.List;
 using DrugManagement.Data.Info;
 using DrugManagement.Data.Path;
 using System;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace DrugManagement.Data.File
@@ -69,88 +70,102 @@ namespace DrugManagement.Data.File
         /// <summary>
         /// ファイル読込
         /// </summary>
-        public override void Read()
+        public override async void Read()
         {
 
-            if (Element != null)
+            await Task.Run(() => 
             {
 
-                var element = Element.Element(nameof(Breakfast));
-
-                Breakfast = new BetweenTime();
-                Breakfast.Start = GetValue(element, nameof(BetweenTime.Start), Breakfast.Start);
-                Breakfast.Finish = GetValue(element, nameof(BetweenTime.Finish), Breakfast.Finish);
-
-                element = Element.Element(nameof(Lunch));
-
-                Lunch = new BetweenTime();
-                Lunch.Start = GetValue(element, nameof(BetweenTime.Start), Lunch.Start);
-                Lunch.Finish = GetValue(element, nameof(BetweenTime.Finish), Lunch.Finish);
-
-                element = Element.Element(nameof(Dinner));
-
-                Dinner = new BetweenTime();
-                Dinner.Start = GetValue(element, nameof(BetweenTime.Start), Dinner.Start);
-                Dinner.Finish = GetValue(element, nameof(BetweenTime.Finish), Dinner.Finish);
-
-                Sleep = GetValue(nameof(Sleep), Sleep);
-                BeforeMeals = GetValue(nameof(BeforeMeals), BeforeMeals);
-                AfterMeals = GetValue(nameof(AfterMeals), AfterMeals);
-                BeforeSleep = GetValue(nameof(BeforeSleep), BeforeSleep);
-                Realarm = GetValue(nameof(Realarm), Realarm);
-
-            }
-            else
-            {
-
-                Breakfast = new BetweenTime()
+                if (Element != null)
                 {
-                    Start = new TimeSpan(6, 0, 0),
-                    Finish = new TimeSpan(6, 30, 0)
-                };
 
-                Lunch = new BetweenTime()
+                    var element = Element.Element(nameof(Breakfast));
+
+                    Breakfast = new BetweenTime()
+                    {
+                        Start = GetValue(element, nameof(BetweenTime.Start), Breakfast.Start),
+                        Finish = GetValue(element, nameof(BetweenTime.Finish), Breakfast.Finish)
+                    };
+
+                    element = Element.Element(nameof(Lunch));
+
+                    Lunch = new BetweenTime()
+                    {
+                        Start = GetValue(element, nameof(BetweenTime.Start), Lunch.Start),
+                        Finish = GetValue(element, nameof(BetweenTime.Finish), Lunch.Finish)
+                    };
+
+                    element = Element.Element(nameof(Dinner));
+
+                    Dinner = new BetweenTime()
+                    {
+                        Start = GetValue(element, nameof(BetweenTime.Start), Dinner.Start),
+                        Finish = GetValue(element, nameof(BetweenTime.Finish), Dinner.Finish)
+                    };
+
+                    Sleep = GetValue(nameof(Sleep), Sleep);
+                    BeforeMeals = GetValue(nameof(BeforeMeals), BeforeMeals);
+                    AfterMeals = GetValue(nameof(AfterMeals), AfterMeals);
+                    BeforeSleep = GetValue(nameof(BeforeSleep), BeforeSleep);
+                    Realarm = GetValue(nameof(Realarm), Realarm);
+
+                }
+                else
                 {
-                    Start = new TimeSpan(12, 0, 0),
-                    Finish = new TimeSpan(12, 30, 0)
-                };
 
-                Dinner = new BetweenTime()
-                {
-                    Start = new TimeSpan(18, 0, 0),
-                    Finish = new TimeSpan(18, 30, 0)
-                };
+                    Breakfast = new BetweenTime()
+                    {
+                        Start = new TimeSpan(6, 0, 0),
+                        Finish = new TimeSpan(6, 30, 0)
+                    };
 
-                Sleep = new TimeSpan(23, 0, 0);
+                    Lunch = new BetweenTime()
+                    {
+                        Start = new TimeSpan(12, 0, 0),
+                        Finish = new TimeSpan(12, 30, 0)
+                    };
 
-                BeforeMeals = new TimeSpan(0, 30, 0);
-                AfterMeals = new TimeSpan(0, 30, 0);
-                BeforeSleep = new TimeSpan(0, 30, 0);
-                Realarm = new TimeSpan(0, 30, 0);
+                    Dinner = new BetweenTime()
+                    {
+                        Start = new TimeSpan(18, 0, 0),
+                        Finish = new TimeSpan(18, 30, 0)
+                    };
 
-            }
+                    Sleep = new TimeSpan(23, 0, 0);
+
+                    BeforeMeals = new TimeSpan(0, 30, 0);
+                    AfterMeals = new TimeSpan(0, 30, 0);
+                    BeforeSleep = new TimeSpan(0, 30, 0);
+                    Realarm = new TimeSpan(0, 30, 0);
+
+                }
+
+            });
 
         }
 
         /// <summary>
         /// ファイル保存
         /// </summary>
-        public override void Save()
+        public override async void Save()
         {
 
-            var breakfast = new XElement(nameof(Breakfast));
-            AddElement(ref breakfast, new XElement(nameof(BetweenTime.Start), Breakfast.Start));
-            AddElement(ref breakfast, new XElement(nameof(BetweenTime.Finish), Breakfast.Finish));
+            await Task.Run(() => 
+            {
 
-            var lunch = new XElement(nameof(Lunch));
-            AddElement(ref lunch, new XElement(nameof(BetweenTime.Start), Lunch.Start));
-            AddElement(ref lunch, new XElement(nameof(BetweenTime.Finish), Lunch.Finish));
+                var breakfast = new XElement(nameof(Breakfast));
+                AddElement(ref breakfast, new XElement(nameof(BetweenTime.Start), Breakfast.Start));
+                AddElement(ref breakfast, new XElement(nameof(BetweenTime.Finish), Breakfast.Finish));
 
-            var dinner = new XElement(nameof(Dinner));
-            AddElement(ref dinner, new XElement(nameof(BetweenTime.Start), Dinner.Start));
-            AddElement(ref dinner, new XElement(nameof(BetweenTime.Finish), Dinner.Finish));
+                var lunch = new XElement(nameof(Lunch));
+                AddElement(ref lunch, new XElement(nameof(BetweenTime.Start), Lunch.Start));
+                AddElement(ref lunch, new XElement(nameof(BetweenTime.Finish), Lunch.Finish));
 
-            using (var elements = new List<XElement>
+                var dinner = new XElement(nameof(Dinner));
+                AddElement(ref dinner, new XElement(nameof(BetweenTime.Start), Dinner.Start));
+                AddElement(ref dinner, new XElement(nameof(BetweenTime.Finish), Dinner.Finish));
+
+                using (var elements = new List<XElement>
             {
                 breakfast,
                 lunch,
@@ -161,11 +176,13 @@ namespace DrugManagement.Data.File
                 new XElement(nameof(BeforeSleep), BeforeSleep),
                 new XElement(nameof(Realarm), Realarm)
             })
-            {
+                {
 
-                WriteFile(elements);
+                    WriteFile(elements);
 
-            }
+                }
+
+            });
 
         }
     }

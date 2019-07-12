@@ -1,5 +1,6 @@
 ﻿using DrugManagement.Data.Format;
 using System;
+using System.Text;
 
 namespace DrugManagement.Data.Info
 {
@@ -65,7 +66,7 @@ namespace DrugManagement.Data.Info
         /// <summary>
         /// 時間ごとの設定時間
         /// </summary>
-        public int HourTimeEach { get; set; } = 2;
+        public int HourEachTime { get; set; } = 2;
 
         /// <summary>
         /// 時間ごとの開始日時
@@ -137,6 +138,174 @@ namespace DrugManagement.Data.Info
         private void UpdatePrescription()
         {
             IsPrescriptionAlarm = (_TotalVolume <= _PrescriptionAlarmVolume);
+        }
+
+        /// <summary>
+        /// 一覧に表示する服用タイミングメッセージの作成
+        /// </summary>
+        /// <returns></returns>
+        public string MakeDrugTiming()
+        {
+
+            const string separate = ",";    // 区切文字
+
+            string returnValue;
+            var message = new StringBuilder();
+
+            try
+            {
+
+                #region 食事
+
+                // 毎食・同タイミング
+                if (Breakfast.IsDrug && Lunch.IsDrug && Dinner.IsDrug
+                    && Breakfast.Kind.Equals(Lunch.Kind)
+                    && Breakfast.Kind.Equals(Dinner.Kind))
+                {
+                    message.Append(Resx.Parameter.AlwaysMeals);
+                    message.Append(GetTimingMessage(Breakfast.Kind));
+                }
+                else
+                {
+
+                    // 朝食
+                    if (Breakfast.IsDrug)
+                    {
+                        message.Append(Resx.Parameter.Breakfast);
+                        message.Append(GetTimingMessage(Breakfast.Kind));
+                    }
+
+                    // 昼食
+                    if (Lunch.IsDrug)
+                    {
+
+                        if (message.Length > 0)
+                        {
+                            message.Append(separate);
+                        }
+
+                        message.Append(Resx.Parameter.Lunch);
+                        message.Append(GetTimingMessage(Lunch.Kind));
+
+                    }
+
+                    // 夕食
+                    if (Dinner.IsDrug)
+                    {
+
+                        if (message.Length > 0)
+                        {
+                            message.Append(separate);
+                        }
+
+                        message.Append(Resx.Parameter.Dinner);
+                        message.Append(GetTimingMessage(Dinner.Kind));
+
+                    }
+
+                }
+
+                #endregion
+
+                #region 就寝
+
+                if (Sleep.IsDrug)
+                {
+
+                    if (message.Length > 0)
+                    {
+                        message.Append(separate);
+                    }
+
+                    message.Append(Resx.Parameter.Sleep);
+
+                }
+
+                #endregion
+
+                #region 頓服
+
+                if (ToBeTaken.IsDrug)
+                {
+
+                    if (message.Length > 0)
+                    {
+                        message.Append(separate);
+                    }
+
+                    message.Append(Resx.Parameter.ToBeTaken);
+
+                }
+
+                #endregion
+
+                #region 日時指定
+
+                if (Appoint.IsDrug)
+                {
+
+                    if (message.Length > 0)
+                    {
+                        message.Append(separate);
+                    }
+
+                    message.Append(AppointTime.ToString(Resx.Parameter.Appoint));
+
+                }
+
+                #endregion
+
+                #region 時間ごと
+
+                if (HourEach.IsDrug)
+                {
+
+                    if (message.Length > 0)
+                    {
+                        message.Append(separate);
+                    }
+
+                    message.Append(Resx.Parameter.HourEach.Replace("_n_", HourEachTime.ToString()));
+
+                }
+
+                #endregion
+
+                returnValue = message.ToString();
+
+            }
+            finally
+            {
+
+                message.Clear();
+                message = null;
+
+            }
+
+            return returnValue;
+
+        }
+
+        /// <summary>
+        /// 食前・食間・食後のメッセージを取得
+        /// </summary>
+        /// <param name="kind">服用タイミング</param>
+        private string GetTimingMessage(Kind kind)
+        {
+            switch (kind)
+            {
+
+                case Kind.Between:
+                    return Resx.Parameter.BetweenMeals;
+
+                case Kind.After:
+                    return Resx.Parameter.AfterMeals;
+
+                case Kind.Before:
+                default:
+                    return Resx.Parameter.BetweenMeals;
+
+            }
         }
 
     }
