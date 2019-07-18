@@ -21,23 +21,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\View\" />
     <Folder Include="Pages\ViewModel\" />
     <Folder Include="Pages\Model\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resx\Parameter.Designer.cs">
+    <Compile Update="Resx\Main.ja.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Parameter.resx</DependentUpon>
+      <DependentUpon>Main.ja.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resx\Parameter.ja.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Parameter.ja.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resx\Parameter.resx">
+    <EmbeddedResource Update="Pages\View\List.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\View\Main.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\View\Setting.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Main.ja.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Parameter.Designer.cs</LastGenOutput>
+      <LastGenOutput>Main.ja.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Parameter.ja.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameter.ja.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 </Project>
