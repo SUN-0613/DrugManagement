@@ -20,11 +20,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\ViewModel\" />
-    <Folder Include="Pages\Model\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Update="Resx\Drug.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Drug.resx</DependentUpon>
+    </Compile>
     <Compile Update="Resx\Main.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -46,6 +46,10 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\View\Setting.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Drug.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Drug.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Resx\Main.ja.resx">
       <Generator>ResXFileCodeGenerator</Generator>

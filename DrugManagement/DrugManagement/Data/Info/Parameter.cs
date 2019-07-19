@@ -142,6 +142,27 @@ namespace DrugManagement.Data.Info
         }
 
         /// <summary>
+        /// 頓服服用
+        /// </summary>
+        /// <param name="selectedDrug">対象薬</param>
+        public void TakeMedicineToBeTaken(Drug drug)
+        {
+
+            // 頓服服用しない場合は処理中止
+            if (!drug.ToBeTaken.IsDrug)
+            {
+                return;
+            }
+
+            // 総量から服用錠を減算
+            drug.TotalVolume -= drug.ToBeTaken.Volume;
+
+            // データ保存
+            Drug.Save();
+
+        }
+
+        /// <summary>
         /// 次回アラーム情報の設定
         /// </summary>
         private void SetNextAlarm()
@@ -373,6 +394,15 @@ namespace DrugManagement.Data.Info
             // 次回アラームを設定
             SetNextAlarm();
 
+        }
+
+        /// <summary>
+        /// 指定薬を削除
+        /// </summary>
+        /// <param name="drug">指定薬</param>
+        public void DeleteDrug(Drug drug)
+        {
+            Drug.Delete(drug);
         }
 
     }

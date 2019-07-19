@@ -1,19 +1,20 @@
-﻿namespace DrugManagement.Language
+﻿namespace DrugManagement.Resx.Language
 {
 
     /// <summary>
     /// 対応言語のテキストをリソースファイルから取得
-    /// パラメータ用
+    /// 服用ページ用
     /// </summary>
-    public class Parameter : Base.TranslateExtension
+    public class Drug : Base.TranslateExtension
     {
 
         /// <summary>
         /// 対応言語のテキストをリソースファイルから取得
-        /// パラメータ用
+        /// メインメニュー用
         /// </summary>
-        public Parameter() : base(nameof(DrugManagement) + "." + nameof(Resx) + "." + nameof(Parameter))
+        public Drug() : base(nameof(DrugManagement) + "." + nameof(Resx) + "." + nameof(Drug))
         { }
 
     }
+
 }

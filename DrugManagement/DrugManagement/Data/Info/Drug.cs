@@ -308,6 +308,19 @@ namespace DrugManagement.Data.Info
             }
         }
 
+        /// <summary>
+        /// 同データであるかを作成日時で判断する
+        /// </summary>
+        /// <param name="obj">対象データ</param>
+        /// <returns>
+        /// True:同データ
+        /// False:異データ
+        /// </returns>
+        public override bool Equals(object obj)
+        {
+            return CreateDateTime.Equals(((Drug)obj).CreateDateTime);
+        }
+
     }
 
 }

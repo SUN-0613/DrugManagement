@@ -6,7 +6,7 @@ using System.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace DrugManagement.Language.Base
+namespace DrugManagement.Resx.Language.Base
 {
 
     /// <summary>

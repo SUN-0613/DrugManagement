@@ -200,6 +200,18 @@ namespace DrugManagement.Data.File
 
         }
 
+        /// <summary>
+        /// 指定薬を一覧より削除
+        /// </summary>
+        /// <param name="drug">指定薬</param>
+        public void Delete(Drug drug)
+        {
+
+            Drugs.Remove(drug);
+            Save();
+
+        }
+
     }
 
 }
