@@ -117,16 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Tab_Drug" xml:space="preserve">
-    <value>服用</value>
-    <comment>タブタイトル：服用</comment>
+  <data name="AfterMeals" xml:space="preserve">
+    <value>After</value>
+    <comment>食後</comment>
   </data>
-  <data name="Tab_List" xml:space="preserve">
-    <value>一覧</value>
-    <comment>タブタイトル：一覧</comment>
+  <data name="AlwaysMeals" xml:space="preserve">
+    <value>Each</value>
+    <comment>毎食</comment>
   </data>
-  <data name="Tab_Setting" xml:space="preserve">
-    <value>設定</value>
-    <comment>タブタイトル：設定</comment>
+  <data name="Appoint" xml:space="preserve">
+    <value>yyyy/MM/dd HH:mm</value>
+    <comment>指定日時</comment>
+  </data>
+  <data name="BeforeMeals" xml:space="preserve">
+    <value>Before</value>
+    <comment>食前</comment>
+  </data>
+  <data name="BetweenMeals" xml:space="preserve">
+    <value>Between</value>
+    <comment>食間</comment>
+  </data>
+  <data name="Breakfast" xml:space="preserve">
+    <value>Breakfast</value>
+    <comment>朝食</comment>
+  </data>
+  <data name="Dinner" xml:space="preserve">
+    <value>Dinner</value>
+    <comment>夕食</comment>
+  </data>
+  <data name="HourEach" xml:space="preserve">
+    <value>_n_Hour each</value>
+    <comment>毎時</comment>
+  </data>
+  <data name="Lunch" xml:space="preserve">
+    <value>Lunch</value>
+    <comment>昼食</comment>
+  </data>
+  <data name="Sleep" xml:space="preserve">
+    <value>Before sleep</value>
+    <comment>就寝前</comment>
+  </data>
+  <data name="ToBeTaken" xml:space="preserve">
+    <value>To be taken</value>
+    <comment>頓服</comment>
   </data>
 </root>

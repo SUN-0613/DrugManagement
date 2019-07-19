@@ -59,5 +59,32 @@ namespace DrugManagement.Resx {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Drug に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Tab_Drug {
+            get {
+                return ResourceManager.GetString("Tab_Drug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   List に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Tab_List {
+            get {
+                return ResourceManager.GetString("Tab_List", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Setting に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Tab_Setting {
+            get {
+                return ResourceManager.GetString("Tab_Setting", resourceCulture);
+            }
+        }
     }
 }

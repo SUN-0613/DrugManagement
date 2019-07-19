@@ -6,7 +6,8 @@
              mc:Ignorable="d"
              x:Class="DrugManagement.Pages.View.Main"
              xmlns:view="clr-namespace:DrugManagement.Pages.View"
+             xmlns:lang="clr-namespace:DrugManagement.Language"
             >
-    <view:List Title="List" />
-    <view:Setting Title="Setting" />
+    <view:List Title="{lang:Main Text=Tab_List}" />
+    <view:Setting Title="{lang:Main Text=Tab_Setting}" />
 </TabbedPage>

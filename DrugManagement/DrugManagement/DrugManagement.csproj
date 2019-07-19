@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\XamarinCommon\CommonForms\CommonForms\CommonForms.csproj" />
     <ProjectReference Include="..\..\..\XamarinCommon\Common\Common.csproj" />
   </ItemGroup>
 
@@ -26,15 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resx\Main.ja.Designer.cs">
+    <Compile Update="Resx\Main.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Main.ja.resx</DependentUpon>
+      <DependentUpon>Main.resx</DependentUpon>
     </Compile>
-    <Compile Update="Resx\Parameter.ja.Designer.cs">
+    <Compile Update="Resx\Parameter.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Parameter.ja.resx</DependentUpon>
+      <DependentUpon>Parameter.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -52,9 +51,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Main.ja.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Main.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Main.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resx\Parameter.ja.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Parameter.ja.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\Parameter.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameter.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

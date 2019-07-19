@@ -61,7 +61,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   食後 に類似しているローカライズされた文字列を検索します。
+        ///   After に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string AfterMeals {
             get {
@@ -70,7 +70,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   毎 に類似しているローカライズされた文字列を検索します。
+        ///   Each に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string AlwaysMeals {
             get {
@@ -88,7 +88,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   食前 に類似しているローカライズされた文字列を検索します。
+        ///   Before に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string BeforeMeals {
             get {
@@ -97,7 +97,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   食間 に類似しているローカライズされた文字列を検索します。
+        ///   Between に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string BetweenMeals {
             get {
@@ -106,7 +106,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   朝 に類似しているローカライズされた文字列を検索します。
+        ///   Breakfast に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Breakfast {
             get {
@@ -115,7 +115,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   夕 に類似しているローカライズされた文字列を検索します。
+        ///   Dinner に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Dinner {
             get {
@@ -124,7 +124,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   _n_時間毎 に類似しているローカライズされた文字列を検索します。
+        ///   _n_Hour each に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string HourEach {
             get {
@@ -133,7 +133,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   昼 に類似しているローカライズされた文字列を検索します。
+        ///   Lunch に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Lunch {
             get {
@@ -142,7 +142,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   就寝前 に類似しているローカライズされた文字列を検索します。
+        ///   Before sleep に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Sleep {
             get {
@@ -151,7 +151,7 @@ namespace DrugManagement.Resx {
         }
         
         /// <summary>
-        ///   頓服 に類似しているローカライズされた文字列を検索します。
+        ///   To be taken に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ToBeTaken {
             get {
